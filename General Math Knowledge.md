@@ -1,4 +1,4 @@
-# A brief overview of math concepts that you should know
+# The Conceptual Run-Through of the Code
 
 Ok, I know it's probably scary for some of you to learn "new math" at first, but I encourage you not to worry. This is what makes the project fun, and here is the philosophy I follow:
 
@@ -12,3 +12,6 @@ Soon, you will inevitably deal with quaternions in your project. "Quaternions" s
 
 "What does that mean?"
 
+Suppose you have a 3D vector $\vec{v}$ pointing in some direction. A quaternion $\mathbf{q}$, when "multiplied" by $\vec{v}$ (I put quotes on "multiplied" because it's not really a multiplication of scalars), can rotate $\vec{v}$ in another direction.
+
+If you've taken
