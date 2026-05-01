@@ -77,6 +77,17 @@ finalAngle = acosd(dot1);
 
 That's basically it! And then the rest of the code is just plotting the joint angle data. Easy enough, right?
 
+Some precautions. Here are the main sources of error:
+* Soft Tissue Artifact (look it up, or look at another snippet of my poster presentation down below)
+* Misaligning the IMUs (imagine if your "bone axis" is misaligned; that would give the wrong angles)
+
+Both errors are **unavoidable**. We can never fix it to perfection, but we can always minimize it using methods. I haven't gotten far into error-minimizing methods, but perhap YOU can research these methods and try to minimize it :)
+
+Here is another snippet of my poster presentation (ignore the incomplete sentence at the beginning):
+
+<img width="1689" height="1410" alt="image" src="https://github.com/user-attachments/assets/c0829fa9-bb17-4fb0-b458-e6d57aeeab7f" />
+
+
 # Cycling Analysis (cycling_joint_ang_analysis.m)
 
 This code uses data that was recorded from the cycling contraption below:
