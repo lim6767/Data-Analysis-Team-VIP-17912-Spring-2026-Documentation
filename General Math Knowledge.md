@@ -32,6 +32,12 @@ The code is not perfect, and sometimes you need to make adjustments in some part
 
 This code uses data that was recorded from the cycling contraption below:
 
-![](<img width="266" height="176" alt="image" src="https://github.com/user-attachments/assets/4e832c26-3597-42ce-83db-5e9c5ed42a07" />)
+<img width="186" height="176" alt="image" src="https://github.com/user-attachments/assets/19341ae1-65df-47eb-8ada-288f3cbae0a5" /> <img width="266" height="176" alt="image" src="https://github.com/user-attachments/assets/9c194698-8fae-492f-bde5-55ca966280a1" />
 
-![](<img width="186" height="176" alt="image" src="https://github.com/user-attachments/assets/24107fa2-3b40-4d0c-8d26-1c8e9df254b8" />)
+The basic idea of this experiment is to record the joint angle of the leg through its cycling motion. Of course, angles retrieved from this will be inaccurate. To validate the data, the method we used was to utilize a **third** IMU to record the angle of rotation of the cycling wheel (I called it the "pivot angle" in my code) and use that angle to perform **forward kinematics** to predict the physical configuration of the leg and its joint angle.
+
+Allow me to explain with my drawings :P
+
+
+
+
