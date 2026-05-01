@@ -1,4 +1,4 @@
-# The Conceptual Run-Through of the Code
+# The Basics
 
 Ok, I know it's probably scary for some of you to learn "new math" at first, but I encourage you not to worry. This is what makes the project fun, and here is the philosophy I follow:
 
