@@ -16,4 +16,10 @@ Suppose you have a 3D vector $\vec{v}$ pointing in some direction. A quaternion 
 
 If you've taken linear algebra, quaternions can be represented as **rotation** matrices, $R$, that can rotate a vector $\vec{v}$ in 3D space.
 
-# The Code: 
+# The Code
+
+I've uploaded three MATLAB codes. Two of them find joint angles for arm/leg and cycling, and the third is a user-defined function (UDF). I've commented the code the best I can, so please read through it to understand what is going on.
+
+[Cycling Analysis]{}
+
+The code is not perfect, and sometimes you need to make adjustments in some parts of the code. Try fidgeting with it and see if it gives you the correct angles. By "correct," we always mean "approximately correct," since there will always be error when measuring joint angles.
