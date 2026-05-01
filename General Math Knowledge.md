@@ -6,7 +6,7 @@ Ok, I know it's probably scary for some of you to learn "new math" at first, but
 
 Let that quote carry you through the project as it has for me. Good luck!
 
-# Linear algebra concepts you should know
+# Quaternions
 
 Soon, you will inevitably deal with quaternions in your project. "Quaternions" sound scary, and indeed, they're a bit of a pickle to wrap your mind around. But for the purposes of this project, all you need to understand about them is that they denote **orientation** and (most importantly) **rotation** in 3D space.
 
@@ -14,4 +14,6 @@ Soon, you will inevitably deal with quaternions in your project. "Quaternions" s
 
 Suppose you have a 3D vector $\vec{v}$ pointing in some direction. A quaternion $\mathbf{q}$, when "multiplied" by $\vec{v}$ (I put quotes on "multiplied" because it's not really a multiplication of scalars), can rotate $\vec{v}$ in another direction.
 
-If you've taken
+If you've taken linear algebra, quaternions can be represented as **rotation** matrices, $R$, that can rotate a vector $\vec{v}$ in 3D space.
+
+# The Code: 
