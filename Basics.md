@@ -28,6 +28,55 @@ I've uploaded three MATLAB codes. Two of them find joint angles for arm/leg and 
 
 The code is not perfect, and sometimes you need to make adjustments in some parts of the code. Try fidgeting with it and see if it gives you the correct angles. By "correct," we always mean "approximately correct," since there will always be error when measuring joint angles.
 
+# Joint Angle Calculation (joint_angle_arm_analysis.m)
+
+Ok, the code file name includes "arm," but this code can also be used to calculate the leg's joint angles. Let me walk you through the general idea of the code.
+
+The code basically has three parts:
+* Cleaning data (reading it, normalizing, and cutting)
+* Quaternions to vectors to dot product to joint angles
+* Plotting
+
+I will only talk about how we get from quaternions to joint angles.
+
+Basically, we assume your arm is composed of **two vectors**, $\vec{v}_A$ and $\vec{v}_B$, where $\vec{v}_A$ is the vector representing your upper arm (the bicep part of your arm or whatever you call it) and $\vec{v}_B$ represents your lower arm (the forearm).
+
+Now, intuitively, it makes sense to have the **axis of the bone** represent the direction of these vectors, which is why we chose the x-axis vector [1; 0; 0] to be our "bone axis" for these vectors. This means we position our IMUs in such a way that their x-axis is their coordinate systems (look at the image directly below) is pointed in the same direction as the bone axis. Please look below at a part of my poster presentation from Spring 2026 to see the visuals.
+
+
+<img width="409" height="410" alt="image" src="https://github.com/user-attachments/assets/841e3325-24c9-4c77-bdbc-7824d1a0c2c9" />
+
+<img width="1678" height="629" alt="image" src="https://github.com/user-attachments/assets/dd52f6f2-0418-4173-910a-168b6555889d" />
+
+
+What's said in my poster presentation is exactly what is happening in my MATLAB code, look below:
+
+```
+%% Calculating Joint Angle via Dot Product
+
+% Define the "bone axis" in the local sensor frame (usually in the
+% x-direction):
+boneDir = [1, 0, 0];
+
+% For every step, compute how much the bone-axis vector rotates for each
+% IMU. This finds where the "bone" is pointing in the room for every frame.
+%
+% Functions:
+% "rotatepoint(qA, boneDir)": rotates the vector boneDir in the orientation
+% of the quaternion, qA.
+%
+vA = rotatepoint(qA, boneDir);
+vB = rotatepoint(qB, boneDir);
+
+% perform dot product (you know this, I hope)
+%
+dot1 = dot(vA, vB, 2);
+dot1 = max(min(dot1, 1), -1); % numerical stability clipping
+finalAngle = acosd(dot1);
+```
+
+That's basically it! And then the rest of the code is just plotting the joint angle data. Easy enough, right?
+
 # Cycling Analysis (cycling_joint_ang_analysis.m)
 
 This code uses data that was recorded from the cycling contraption below:
