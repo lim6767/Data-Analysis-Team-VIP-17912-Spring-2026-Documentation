@@ -20,6 +20,18 @@ If you've taken linear algebra, quaternions can be represented as **rotation** m
 
 I've uploaded three MATLAB codes. Two of them find joint angles for arm/leg and cycling, and the third is a user-defined function (UDF). I've commented the code the best I can, so please read through it to understand what is going on.
 
-[Cycling Analysis]{}
+[Cycling Analysis](cycling_joint_ang_analysis.m)
+
+[Calculating joint angles](joint_angle_arm_analysis.m)
+
+[UDF](pivotangle2jointangle.m)
 
 The code is not perfect, and sometimes you need to make adjustments in some parts of the code. Try fidgeting with it and see if it gives you the correct angles. By "correct," we always mean "approximately correct," since there will always be error when measuring joint angles.
+
+# Cycling Analysis (cycling_joint_ang_analysis.m)
+
+This code uses data that was recorded from the cycling contraption below:
+
+![](<img width="266" height="176" alt="image" src="https://github.com/user-attachments/assets/4e832c26-3597-42ce-83db-5e9c5ed42a07" />)
+
+![](<img width="186" height="176" alt="image" src="https://github.com/user-attachments/assets/24107fa2-3b40-4d0c-8d26-1c8e9df254b8" />)
