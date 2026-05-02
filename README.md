@@ -1,5 +1,7 @@
 # Data Analysis Team VIP 17912 Spring 2026 Documentation
+
 Author: Yone Lim
+
 Date: April 28, 2026
 
 # Introduction
