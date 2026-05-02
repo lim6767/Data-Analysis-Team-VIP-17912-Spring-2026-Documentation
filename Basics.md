@@ -81,7 +81,7 @@ I will only talk about how we get from quaternions to joint angles.
 
 Basically, we assume your arm is composed of **two vectors**, $\vec{v}_A$ and $\vec{v}_B$, where $\vec{v}_A$ is the vector representing your upper arm (the bicep part of your arm or whatever you call it) and $\vec{v}_B$ represents your lower arm (the forearm).
 
-Now, intuitively, it makes sense to have the **axis of the bone** represent the direction of these vectors, which is why we chose the x-axis vector [1; 0; 0] to be our "bone axis" for these vectors. This means we position our IMUs in such a way that their x-axis is their coordinate systems (look at the image directly below) is pointed in the same direction as the bone axis. Please look below at a part of my poster presentation from Spring 2026 to see the visuals.
+Now, intuitively, it makes sense to have the **axis of the bone** represent the direction of these vectors, which is why we chose the x-axis vector [1; 0; 0] to be our "bone axis" for these vectors. This means we position our IMUs in such a way that their x-axis in their coordinate systems (look at the image directly below) is pointed in the same direction as the bone axis. Please look below at a part of my poster presentation from Spring 2026 to see the visuals.
 
 
 <img width="409" height="410" alt="image" src="https://github.com/user-attachments/assets/841e3325-24c9-4c77-bdbc-7824d1a0c2c9" />
