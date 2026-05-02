@@ -13,3 +13,8 @@ Before we go into the code and math theory, understand the project goal:
 This means we have to accomplish the following:
 * Be able to derive joint angles from a patient's limb
 * Use those joint angles and other tools to create a method for analyzing movement in patients (hint: we are thinking of using a cycling tool to extract information about the patient's movements)
+
+In this documentation, you will find:
+* what progress we made so far (and the code)
+* an outline of the next steps
+* some brief overview of concepts you should know ([inside the Basics.md file](Basics.md))
