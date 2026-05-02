@@ -28,6 +28,46 @@ I've uploaded three MATLAB codes. Two of them find joint angles for arm/leg and 
 
 The code is not perfect, and sometimes you need to make adjustments in some parts of the code. Try fidgeting with it and see if it gives you the correct angles. By "correct," we always mean "approximately correct," since there will always be error when measuring joint angles.
 
+## "How do I get data from my IMUs?"
+
+At the beginning of the codes, you will see the following:
+
+```
+%% DATA LOADING & PRE-PROCESSING
+% Load your Xsens Dot IMU quaternion data here:
+IMU_A = readtable("IMU_A.csv"); % upper part of the arm
+IMU_B = readtable("IMU_B.csv"); % lower part of the arm
+```
+
+You might be asking, "How do we get the CSV files of the IMUs?" I will show you :D
+
+This tutorial is only for the Xsens Dot IMUs (scroll down to see what they look like; they're just orange little rectangles with "Xsens" written on them) that I used for my project.
+
+### Step 1: Download the **Movella Dot** app on your PHONE
+If there haven't been any updates, the app icon should look like this:
+
+<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/3238ef8d-0e99-41ad-b11f-1dfa04b0bd2c" />
+
+### Step 2: Connect everything
+Connect the IMU charging case to your computer with a USB cord. The IMUs inside the charging port should be charging.
+
+Take out as many IMUs as you want to use and turn them on by pressing and holding the orange face of the IMU. After a few seconds, a green light should turn on and start blinking yellow. This means the IMU is turned on. To turn it off, press and hold the orange face again until the same green light displays for a few seconds and fades away.
+
+In your **Movella Dot** app on your phone, connect to the IMUs in the **Dashboard** menu (make sure to have Bluetooth on).
+
+After connecting to the IMUs, go to **Measure & Connect** and toggle on **Synchronization**. This should take a few seconds.
+
+After the IMUs are synchronized, press **Real-time Streaming (Live mode)** to record your data. By default, the IMUs will record quaternions, but you can change the settings to make them measure something else (like Euler angles, angular acceleration, etc). My code is compatible with just quaternions, so you don't have to change any settings. Just start recording and stop whenever you want. The data should be saved inside your phone.
+
+### Step 3: Retrieving recorded data from your phone
+Now. Getting this data out of your phone is a bit of a pickle (at least for an Android user like me).
+
+Connect your phone directly to your computer with a USB cord. Customize your phone settings so that you can transfer files between your phone and your computer.
+
+In your computer, access your phone's **Internal Storage**. Then open **Android** folder, then **data** folder, then the **com.xsens.dot.android** folder, then **files** folder, then **logs**, and then you should arrive at the directory where all your IMU CSV data has been saved. Copy or cut these CSV files and paste them into the same folder as your MATLAB files.
+
+Note this is only for Android. I'm not sure how different this process would be on an Apple. Ask your mentor.
+
 # Joint Angle Calculation (joint_angle_arm_analysis.m)
 
 Ok, the code file name includes "arm," but this code can also be used to calculate the leg's joint angles. Let me walk you through the general idea of the code.
